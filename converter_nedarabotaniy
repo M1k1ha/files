@@ -1,0 +1,227 @@
+#подключаем модули :)
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import*
+#создаём окно :)
+app = QApplication([])
+prilogenie = QWidget()
+prilogenie.show()
+prilogenie.setWindowTitle(' Конвертер Единиц Измерений')
+#немного виджетов
+perevesti = QPushButton('Перевести')
+first = QLineEdit('Перевести что...')
+second = QLineEdit('Единица измерения...')
+third = QLineEdit('Перевести куда...')
+itog = QLabel()
+nasad = QPushButton('Назад')
+#и линий (:
+general_line = QVBoxLayout()
+line1 = QHBoxLayout()
+line2 = QHBoxLayout()
+#а потом и виджеты насаживаем на линии
+general_line.addLayout(line1)
+general_line.addLayout(line2)
+line1.addWidget(first)
+line1.addWidget(second)
+general_line.addWidget(second)
+line1.addWidget(third)
+line2.addWidget(perevesti)
+general_line.addWidget(perevesti)
+general_line.addWidget(itog)
+line1.addWidget(itog)
+#функционал
+if second == 'г' and third == 'кг':
+    itog = first : 1000
+elif second == 'г' and third == 'г':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+if second == 'г' and third == 'ц':
+    itog = first : 100000
+elif second == 'г' and third == 'г':
+    perevesti.hide()
+
+
+
+if second == 'г' and third == 'т':
+    itog = first : 1000000
+elif second == 'г' and third == 'г':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+if second == 'кг' and third == 'г':
+    itog = first * 1000
+elif second == 'кг' and third == 'кг':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+if second == 'кг' and third == 'ц':
+    itog = first : 100
+elif second == 'кг' and third == 'кг':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+if second == 'кг' and third == 'т':
+    itog = first : 1000
+elif second == 'кг' and third == 'кг':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+if second == 'ц' and third == 'г':
+    itog = first * 100000
+elif second == 'ц' and third == 'ц':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+if second == 'ц' and third == 'кг':
+    itog = first * 100
+elif second == 'ц' and third == 'ц':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+if second == 'ц' and third == 'т':
+    itog = first : 10
+elif second == 'ц' and third == 'ц':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+if second == 'т' and third == 'г':
+    itog = first * 1000000
+elif second == 'т' and third == 'т':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+
+
+
+if second == 'т' and third == 'кг':
+    itog = first * 1000
+elif second == 'т' and third == 'т':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+
+if second == 'т' and third == 'ц':
+    itog = first * 10
+elif second == 'т' and third == 'т':
+    perevesti.hide()
+else:
+    perevesti.show()
+
+
+
+#о привет, итоговое окно
+def perevesti_clicked():
+    first.hide()
+    second.hide()
+    third.hide()
+    perevesti.hide()
+
+    nasad.show()
+    itog.show()
+
+perevesti.clicked.connect(perevesti_clicked)
+
+def nasad_clicked():
+    first.show()
+    second.show()
+    third.show()
+
+    nasad.hide()
+    itog.hide()
+    perevesti.hide()
+
+nasad.clicked.connect(nasad_clicked)
+
+app.exec_()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
